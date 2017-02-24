@@ -1,0 +1,23 @@
+<launch>
+  
+
+
+
+
+<node pkg="rviz" type="rviz" name="rviz_nav" output="screen" args="-d $(find deep_localization)/config/config.rviz"> </node> 
+
+<arg name="mapfile" default="$(find deep_localization)/map/mapfile_rennes.yaml"/>
+  <arg name="mapfile_t" default="$(find deep_localization)/map/mapfile_rennes.yaml"/>
+  <node pkg="map_server" type="map_server" name="map_server"  args="$(arg mapfile)" respawn="true"/>
+
+  <node pkg="map_server" type="map_server" name="traversability_map_server"  args="$(arg mapfile_t)">
+    <param name="frame_id " value="/map"/>
+    <remap from="map" to="map_traversability"/>
+    <remap from="/map_metadata" to="/map_traversability_metadata"/>
+    <remap from="/static_map" to="/traversability_static_map"/>
+  </node>
+
+
+ <node pkg="simulator" type="caster" name="caster"  output="screen"> </node>
+   <!-- <include file="$(find hector_mapping)/launch/mapping.launch" />   -->
+</launch>

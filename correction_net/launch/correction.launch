@@ -1,0 +1,14 @@
+<launch>
+  
+
+    <arg name="mapfile" default="$(find minisim)/map/mapfile.yaml"/>
+    <include file="$(find minisim)/launch/map_server_rennes.launch"/>
+    <include file="$(find minisim)/launch/simulator.launch" />
+    <include file="$(find minisim)/launch/simRviz.launch" />    
+    <include file="$(find ais_stamina_master)/launch/localizer.launch" />  
+    <!--<node pkg="correction_net" type="correction_net.py" name="correction_net"  output="screen"> </node>  --> 
+    <node pkg="minisim" type="caster_online" name="caster_online"  output="screen"> </node>
+
+     <node pkg="minisim" type="keyboard_ros" name="keyboard_ros" output="screen"/>
+
+</launch>

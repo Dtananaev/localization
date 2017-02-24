@@ -1,0 +1,15 @@
+<launch>
+  
+  <arg name="mapfile" default="$(find simulator)/map/mapfile.yaml"/>
+  <arg name="mapfile_t" default="$(find simulator)/map/mapfile.yaml"/>
+  <node pkg="map_server" type="map_server" name="map_server"  args="$(arg mapfile)" respawn="true"/>
+
+  <node pkg="map_server" type="map_server" name="traversability_map_server"  args="$(arg mapfile_t)">
+    <param name="frame_id " value="/map"/>
+    <remap from="map" to="map_traversability"/>
+    <remap from="/map_metadata" to="/map_traversability_metadata"/>
+    <remap from="/static_map" to="/traversability_static_map"/>
+  </node>
+
+
+</launch>

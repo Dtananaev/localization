@@ -1,0 +1,13 @@
+<launch>
+
+    <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
+    <rosparam file="$(find simulator)/config/costmap_common_params.yaml" command="load" ns="global_costmap" />
+    <rosparam file="$(find simulator)/config/costmap_common_params.yaml" command="load" ns="local_costmap" />
+    <rosparam file="$(find simulator)/config/local_costmap_params.yaml" command="load" />
+    <rosparam file="$(find simulator)/config/global_costmap_params.yaml" command="load" />
+    <rosparam file="$(find simulator)/config/dwa_local_planner.yaml" command="load" />
+    <param name="base_local_planner" value="dwa_local_planner/DWAPlannerROS" />
+     <param name="controller_frequency" value="1.0" />
+  </node>
+
+</launch>

@@ -1,0 +1,29 @@
+footprint: [[-0.5, -0.55], [-0.5, 0.55], [1.75, 0.55], [1.75, -0.55]]
+#footprint: [[-0.25, -0.25], [-0.25, 0.25], [0.25, 0.25], [0.25, -0.25]]
+footprint_padding: 0.0
+
+robot_base_frame: np
+update_frequency: 1.0
+publish_frequency: 1.0
+transform_tolerance: 0.5
+
+resolution: 0.1
+
+obstacle_range: 49.0
+raytrace_range: 50.0
+
+#layer definitions
+static:
+    map_topic: /map
+    subscribe_to_updates: true
+
+obstacles_laser:
+    observation_sources: laser rear_laser
+    laser: {data_type: LaserScan, clearing: true, marking: true, topic: scan_front, inf_is_valid: true}
+    rear_laser: {data_type: LaserScan, clearing: true, marking: true, topic: scan_rear, inf_is_valid: true}
+inflation_layer:
+    enabled: true
+    #inscribed_radius:     0.15 # Will this have any effect?
+    #circumscribed_radius: 1.20 # Will this have any effect?
+    inflation_radius: 1.0
+    cost_scaling_factor: 1

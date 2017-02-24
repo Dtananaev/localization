@@ -1,0 +1,6 @@
+<launch>
+    <arg name="mapfile" default="$(find simulator)/map/mapfile.yaml"/>
+    <include file="$(find simulator)/launch/map_server.launch"/>
+    <include file="$(find simulator)/launch/simRviz.launch" />    
+ 	<node pkg="simulator" type="simulator" name="simulation_ros" />
+</launch>
