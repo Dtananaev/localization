@@ -21,7 +21,7 @@ It contains:
 
 * simulator - simulate the robot  noisy odometry and front and back 2D laser scans. It also output the true pose of the robot. 
 The simulator could be used in order to generate the dataset for neural network training.
- [![simulator](https://github.com/Dtananaev/ROS_nodes/blob/master/pictures/graph_planner.JPG)]https://www.youtube.com/watch?v=XgUfoiTanBc)
+ [![simulator](https://github.com/Dtananaev/ROS_nodes/blob/master/pictures/graph_planner.JPG)](https://www.youtube.com/watch?v=XgUfoiTanBc)
      * To install use: catkin_make -j1 
      * To run: roslaunch simulator simulator.launch - run simulator 
                roslaunch simulator mbDWA.launch - run move_base- robot motion library. 
