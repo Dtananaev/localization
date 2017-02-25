@@ -38,4 +38,9 @@ The simulator could be used in order to generate the dataset for neural network 
 * correction_net - the correction network is network based on the idea that if we have a perfect odometry we have solved localization problem. The idea of the correction network is to correct the error produced by the odometry by using laser scan information. THe idea based on standart Kalman filter approach (for the details see the full report: https://drive.google.com/open?id=0B0jDQTJWpzD3ZnBHMDY1d0twU3c). The correction net architecture based on modified version VGG network architecture implemented so far only for processing recorded data files in offline settings. The scripts for training and testing provided. 
  [![correction_net](https://github.com/Dtananaev/localization/blob/master/pictures/correction_net.JPG)](https://youtu.be/ULN8vkq5_bk)
 
+* A bit of fun:). Another interesting applicaton of the neural network coud be keeping the whole map inside the neural network weights. So in the video below it is possible to see how simple 4 layers fully connected network could output 181 laser scan distance measurements given only x,y,theta position and orientation on the map.
+[![regenerate_map](https://github.com/Dtananaev/localization/blob/master/pictures/correction_net.JPG)](https://youtu.be/ULN8vkq5_bk)
+
+
+
 
