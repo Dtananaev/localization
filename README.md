@@ -21,23 +21,22 @@ It contains:
 
 * simulator - simulate the robot  noisy odometry and front and back 2D laser scans. It also output the true pose of the robot. 
 The simulator could be used in order to generate the dataset for neural network training.
- [![simulator](https://github.com/Dtananaev/ROS_nodes/blob/master/pictures/graph_planner.JPG)](https://www.youtube.com/watch?v=XgUfoiTanBc)
+ [![simulator](https://github.com/Dtananaev/localization/blob/master/pictures/simulator.JPG)](https://www.youtube.com/watch?v=XgUfoiTanBc)
      * To install use: catkin_make -j1 
      * To run: roslaunch simulator simulator.launch - run simulator 
                roslaunch simulator mbDWA.launch - run move_base- robot motion library. 
                In order to move the robot use the button "2D nav goal"
-* multimaster_example
- [![multimaster_example](https://github.com/Dtananaev/ROS_nodes/blob/master/pictures/multimaster.JPG)](https://www.youtube.com/watch?v=59T0iIJnUGk&list=PLm9UBVQa6prlMgzgwN7DHSIl7TJIrmwM-&index=7)
+* Scan_matcher - the neural network which uses only 2D laser scans in order to get the x,y,theta pose of robot. In video below the green is the robot ground truth pose and red is predicted by network. 
+ [![Scan_matcher](https://github.com/Dtananaev/localization/blob/master/pictures/scan.JPG)](https://www.youtube.com/watch?v=LuZNLaJ75xs)
      * To install use: catkin_make -j1 
      * To run: 
-         * open launch file ../multimaster_example/launch/multimaster.launch  and add the ip of foreign PC and port of roscore 
-         * run roscore on both PC (not necessary to run roscore on foreign PC before launching multimaster because it has autoconnect)
-         * run talker node: rosrun multimaster_example talker
-         * run multimaster: roslaunch multimaster_example multimaster.launch
-     * Troubleshooting: 
-         * Problem with sending messages between PCs, type on both PC (add to ~/.bashrc): export ROS_HOSTNAME=ip_adress_of_pc(e.g.export ROS_HOSTNAME=192.168.0.10 )   
-* multimaster - the full version of the multimaster which allows to broadcast the list of topics and tf transforms from host pc to foreign pc. This list specified in the config.yaml file. Other properties specified in the launch file (see multimaster.launch). 
- [![multimaster](https://github.com/Dtananaev/ROS_nodes/blob/master/pictures/mm.JPG)](https://www.youtube.com/watch?v=VnkDEB2HQ4E&feature=youtu.be)
+         * cd scan_matcher/scripts/
+         * python scan_mather.py - this command run network online in simulator.
+         * pyhon scan_matcher_train.py - this command run network in online training regime. The network accumulate the data for 10 seconds than make one epoch of training and updates the weights on the fly. 
+         
+* recording tools - the tools for recording the simulated data from simulator (odometry, laser scans, true pose) into txt files and also it contains the tools for visualization of the recorded data.         
+* correction_net - the correction network is network based on the idea that if we have a perfect odometry we have solved localization problem. The idea of the correction network is to correct the error produced by the odometry by using laser scan information. THe idea based on standart Kalman filter approach (for the details see the full report: https://drive.google.com/open?id=0B0jDQTJWpzD3ZnBHMDY1d0twU3c). The correction net architecture based on modified version VGG network architecture implemented so far only for processing recorded data files in offline settings. The scripts for training and testing provided. 
+ [![correction_net](https://github.com/Dtananaev/localization/blob/master/pictures/correction_net.JPG)](https://www.youtube.com/watch?v=VnkDEB2HQ4E&feature=youtu.be)
      * To install use: catkin_make -j1 
      * To run: 
          * open launch file ../multimaster/launch/multimaster.launch  and add the ip of foreign PC and port of roscore 
