@@ -36,12 +36,6 @@ The simulator could be used in order to generate the dataset for neural network 
          
 * recording tools - the tools for recording the simulated data from simulator (odometry, laser scans, true pose) into txt files and also it contains the tools for visualization of the recorded data.         
 * correction_net - the correction network is network based on the idea that if we have a perfect odometry we have solved localization problem. The idea of the correction network is to correct the error produced by the odometry by using laser scan information. THe idea based on standart Kalman filter approach (for the details see the full report: https://drive.google.com/open?id=0B0jDQTJWpzD3ZnBHMDY1d0twU3c). The correction net architecture based on modified version VGG network architecture implemented so far only for processing recorded data files in offline settings. The scripts for training and testing provided. 
- [![correction_net](https://github.com/Dtananaev/localization/blob/master/pictures/correction_net.JPG)](https://www.youtube.com/watch?v=VnkDEB2HQ4E&feature=youtu.be)
-     * To install use: catkin_make -j1 
-     * To run: 
-         * open launch file ../multimaster/launch/multimaster.launch  and add the ip of foreign PC and port of roscore 
-         * open the file multimaster/config.yaml  and specify the lists of topics that you want to broadcasts to foreign PC
-         * run roscore on both PC (not necessary to run roscore on foreign PC before launching multimaster because it has autoconnect)
-         * run multimaster: roslaunch multimaster multimaster.launch
-     * Troubleshooting: 
-         * Problem with sending messages between PCs, type on both PC (add to ~/.bashrc): export ROS_HOSTNAME=ip_adress_of_pc(e.g.export ROS_HOSTNAME=192.168.0.10 )  
+ [![correction_net](https://github.com/Dtananaev/localization/blob/master/pictures/correction_net.JPG)](https://youtu.be/ULN8vkq5_bk)
+
+
