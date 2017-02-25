@@ -15,7 +15,7 @@ Installation
 7. You are done!
 
 [![Build Status](https://travis-ci.org/Dtananaev/ROS_nodes.svg?branch=master)](https://travis-ci.org/Dtananaev/ROS_nodes)
-[![BSD2 License](http://img.shields.io/badge/license-BSD2-brightgreen.svg)](https://github.com/Dtananaev/ROS_nodes/blob/master/LICENSE.md) 
+[![BSD2 License](http://img.shields.io/badge/license-BSD2-brightgreen.svg)](https://github.com/Dtananaev/localization/blob/master/LICENSE.md) 
 
 It contains:
 
@@ -39,7 +39,7 @@ The simulator could be used in order to generate the dataset for neural network 
  [![correction_net](https://github.com/Dtananaev/localization/blob/master/pictures/correction_net.JPG)](https://youtu.be/ULN8vkq5_bk)
 
 * A bit of fun:). Another interesting applicaton of the neural network coud be keeping the whole map inside the neural network weights. So in the video below it is possible to see how simple 4 layers fully connected network could output 181 laser scan distance measurements given only x,y,theta position and orientation on the map.
-[![regenerate_map](https://github.com/Dtananaev/localization/blob/master/pictures/correction_net.JPG)](https://youtu.be/ULN8vkq5_bk)
+[![regenerate_map](https://github.com/Dtananaev/localization/blob/master/pictures/laserGen.JPG)](https://www.youtube.com/watch?v=DWMxrn6dcgA)
 
 
 
