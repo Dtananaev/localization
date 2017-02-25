@@ -1,4 +1,4 @@
-Copyright (c) 2015, Denis Tananaev All rights reserved.
+Copyright (c) 2016, Denis Tananaev, Vladislav Tananaev, Oksana Kutkina All rights reserved.
 
 Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
 
