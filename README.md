@@ -23,9 +23,9 @@ It contains:
 The simulator could be used in order to generate the dataset for neural network training.
  [![simulator](https://github.com/Dtananaev/localization/blob/master/pictures/simulator.JPG)](https://www.youtube.com/watch?v=XgUfoiTanBc)
      * To install use: catkin_make -j1 
-     * To run: * roslaunch simulator simulator.launch - run simulator.
-               * roslaunch simulator mbDWA.launch - run move_base- robot motion library. 
-                In order to move the robot use the button "2D nav goal"
+     * To run: 
+        * roslaunch simulator simulator.launch - run simulator.
+        * roslaunch simulator mbDWA.launch - run move_base- robot motion library. In order to move the robot use the button "2D nav goal"
 * Scan_matcher - the neural network which uses only 2D laser scans in order to get the x,y,theta pose of robot. In video below the green is the robot ground truth pose and red is predicted by network. 
  [![Scan_matcher](https://github.com/Dtananaev/localization/blob/master/pictures/scan.JPG)](https://www.youtube.com/watch?v=LuZNLaJ75xs)
      * To install use: catkin_make -j1 
