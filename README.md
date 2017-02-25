@@ -4,16 +4,28 @@ Robot localization with Deep neural network on 2D occupancy grid maps.
 The goal of the research project is to explore the capabilities of the neural networks to localize the robot on 2D plane given the odometry and 2D laser scans.
 The full report could be found here:https://drive.google.com/open?id=0B0jDQTJWpzD3ZnBHMDY1d0twU3c
 
+Installation
+======================================
+1. Install ROS (http://www.ros.org/) 
+2. Install Theano(http://deeplearning.net/software/theano/) or Tensorflow(https://www.tensorflow.org/) 
+3. Install Keras(https://keras.io/)
+4. Clone this repository into ROS workspace
+5. Clone navigation stack repository (http://wiki.ros.org/navigation) into ROS workspace
+6. Compile ROS workspace: catkin_make -j1
+7. You are done!
 
 [![Build Status](https://travis-ci.org/Dtananaev/ROS_nodes.svg?branch=master)](https://travis-ci.org/Dtananaev/ROS_nodes)
 [![BSD2 License](http://img.shields.io/badge/license-BSD2-brightgreen.svg)](https://github.com/Dtananaev/ROS_nodes/blob/master/LICENSE.md) 
 
 It contains:
 
-* graph_planner
- [![graph_planner](https://github.com/Dtananaev/ROS_nodes/blob/master/pictures/graph_planner.JPG)](https://www.youtube.com/watch?v=dBtdjbe6mtw&list=PLm9UBVQa6prlMgzgwN7DHSIl7TJIrmwM-)
+* simulator - simulate the robot  noisy odometry and front and back 2D laser scans. It also output the true pose of the robot. 
+The simulator could be used in order to generate the dataset for neural network training.
+ [![simulator](https://github.com/Dtananaev/ROS_nodes/blob/master/pictures/graph_planner.JPG)]https://www.youtube.com/watch?v=XgUfoiTanBc)
      * To install use: catkin_make -j1 
-     * To run: roslaunch graph_planner graph.launch
+     * To run: roslaunch simulator simulator.launch - run simulator 
+               roslaunch simulator mbDWA.launch - run move_base- robot motion library. 
+               In order to move the robot use the button "2D nav goal"
 * multimaster_example
  [![multimaster_example](https://github.com/Dtananaev/ROS_nodes/blob/master/pictures/multimaster.JPG)](https://www.youtube.com/watch?v=59T0iIJnUGk&list=PLm9UBVQa6prlMgzgwN7DHSIl7TJIrmwM-&index=7)
      * To install use: catkin_make -j1 
