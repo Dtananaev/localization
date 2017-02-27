@@ -14,6 +14,7 @@ Installation
 6. Compile ROS workspace: catkin_make -j1
 7. You are done!
 
+
 [![Build Status](https://travis-ci.org/Dtananaev/localization.svg?branch=master)](https://travis-ci.org/Dtananaev/localization)
 [![BSD2 License](http://img.shields.io/badge/license-BSD2-brightgreen.svg)](https://github.com/Dtananaev/localization/blob/master/LICENSE.md) 
 
