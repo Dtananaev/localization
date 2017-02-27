@@ -91,7 +91,7 @@ find_package(Eigen3 REQUIRED)
 catkin_package(
   INCLUDE_DIRS include
   LIBRARIES simulator
-  CATKIN_DEPENDS Eigen3 roscpp rospy std_msgs tf visualization_msgs
+  CATKIN_DEPENDS roscpp rospy std_msgs tf visualization_msgs
   DEPENDS system_lib
 )
 
