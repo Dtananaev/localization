@@ -18,7 +18,7 @@ find_package(catkin REQUIRED COMPONENTS
 )
 
 
-FIND_PACKAGE(Eigen REQUIRED )
+FIND_PACKAGE(eigen3 REQUIRED )
 
 
 
@@ -152,37 +152,7 @@ TARGET_LINK_LIBRARIES(mapper_viz
 
 
 
-#add_library(navigation_rail
-#   src/rail.cpp
-#)
 
-## Declare a cpp executable
-# add_executable(navigation_rail_node src/navigation_rail_node.cpp)
-
-## Add cmake target dependencies of the executable/library
-## as an example, message headers may need to be generated before nodes
-# add_dependencies(navigation_rail_node navigation_rail_generate_messages_cpp)
-
-## Specify libraries to link a library or executable target against
-# target_link_libraries(navigation_rail_node
-#   ${catkin_LIBRARIES}
-# )
-
-#add_executable(teach_gui
-#    src/TeachWindowApp.cpp
-#    ${UI_HDRS}
-#    ${GUI_MOC2}
-#)
-
-#TARGET_LINK_LIBRARIES(teach_gui
-#    ${QT_LIBRARIES}  ${catkin_LIBRARIES}
-#)
-
-#############
-## Install ##
-#############
-
-# all install targets should use catkin DESTINATION variables
 # See http://ros.org/doc/api/catkin/html/adv_user_guide/variables.html
 
 ## Mark executable scripts (Python etc.) for installation
@@ -217,11 +187,4 @@ TARGET_LINK_LIBRARIES(mapper_viz
 ## Testing ##
 #############
 
-## Add gtest based cpp test target and link libraries
-# catkin_add_gtest(${PROJECT_NAME}-test test/test_navigation_rail.cpp)
-# if(TARGET ${PROJECT_NAME}-test)
-#   target_link_libraries(${PROJECT_NAME}-test ${PROJECT_NAME})
-# endif()
 
-## Add folders to be run by python nosetests
-# catkin_add_nosetests(test)
