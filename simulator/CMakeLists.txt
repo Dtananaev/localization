@@ -16,13 +16,17 @@ find_package(catkin REQUIRED COMPONENTS
   tf
   visualization_msgs
 )
-FIND_PACKAGE(eigen3 REQUIRED )
+FIND_PACKAGE(Eigen REQUIRED )
 
 
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
 
+INCLUDE_DIRECTORIES(
+   ${CMAKE_SOURCE_DIR}/src
+   ${CMAKE_CURRENT_BINARY_DIR}
 
+)
 ## Uncomment this if the package has a setup.py. This macro ensures
 ## modules and global scripts declared therein get installed
 ## See http://ros.org/doc/api/catkin/html/user_guide/setup_dot_py.html
@@ -93,6 +97,7 @@ catkin_package(
   LIBRARIES simulator
   CATKIN_DEPENDS roscpp rospy std_msgs tf visualization_msgs
   DEPENDS system_lib
+  DEPENDS Eigen
 )
 
 ###########
@@ -108,10 +113,6 @@ include_directories(
   ${EIGEN_INCLUDE_DIR}
 )
 
-## Declare a cpp library
-# add_library(minisim
-#   src/${PROJECT_NAME}/minisim.cpp
-# )
 
 
 add_library(navigate
