@@ -91,7 +91,7 @@ FIND_PACKAGE(Eigen REQUIRED )
 catkin_package(
   INCLUDE_DIRS include
   LIBRARIES simulator
-  CATKIN_DEPENDS Eigen3 roscpp rospy std_msgs tf visualization_msgs
+  CATKIN_DEPENDS Eigen roscpp rospy std_msgs tf visualization_msgs
   DEPENDS system_lib
 )
 
@@ -105,7 +105,7 @@ catkin_package(
 include_directories(
   ${catkin_INCLUDE_DIRS}
   include
-  ${EIGEN3_INCLUDE_DIR}
+  ${EIGEN_INCLUDE_DIR}
 )
 
 ## Declare a cpp library
