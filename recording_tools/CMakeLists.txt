@@ -18,8 +18,6 @@ find_package(catkin REQUIRED COMPONENTS
 )
 
 
-FIND_PACKAGE(eigen3 REQUIRED )
-
 
 
 INCLUDE_DIRECTORIES(
