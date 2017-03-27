@@ -18,7 +18,7 @@ find_package(catkin REQUIRED COMPONENTS
 )
 
 
-FIND_PACKAGE(Eigen3 REQUIRED )
+FIND_PACKAGE(Eigen REQUIRED )
 
 
 
