@@ -16,7 +16,7 @@ find_package(catkin REQUIRED COMPONENTS
   tf
   visualization_msgs
 )
-FIND_PACKAGE(Eigen REQUIRED )
+FIND_PACKAGE(eigen3 REQUIRED )
 
 
 ## System dependencies are found with CMake's conventions
