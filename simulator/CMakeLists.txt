@@ -16,7 +16,7 @@ find_package(catkin REQUIRED COMPONENTS
   tf
   visualization_msgs
 )
-FIND_PACKAGE(Eigen3 REQUIRED )
+FIND_PACKAGE(Eigen REQUIRED )
 
 
 ## System dependencies are found with CMake's conventions
@@ -105,7 +105,7 @@ catkin_package(
 include_directories(
   ${catkin_INCLUDE_DIRS}
   include
-  ${EIGEN3_INCLUDE_DIR}
+  ${EIGEN_INCLUDE_DIR}
 )
 
 ## Declare a cpp library
