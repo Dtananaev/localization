@@ -51,7 +51,7 @@
   <run_depend>std_msgs</run_depend>
   <run_depend>tf</run_depend>
   <run_depend>visualization_msgs</run_depend>
-
+  <run_depend>cmake_modules</run_depend> 
 
   <!-- The export tag contains other, unspecified, tags -->
   <export>
