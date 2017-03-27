@@ -14,6 +14,7 @@ find_package(catkin REQUIRED COMPONENTS
   rospy
   roslib
   cmake_modules
+  nav_msgs
    tf
 )
 
@@ -80,9 +81,9 @@ INCLUDE_DIRECTORIES(
 ## Generate added messages and services with any dependencies listed here
  #generate_messages(
  #  DEPENDENCIES
- #  std_msgs  # Or other packages containing msgs
- #  navigation_rail
- #)
+ # std_msgs  # Or other packages containing msgs
+  nav_msgs
+ )
 
 ###################################
 ## catkin specific configuration ##
@@ -98,7 +99,7 @@ catkin_package(
 #  LIBRARIES navigation_rail
 #  CATKIN_DEPENDS roscpp rospy interactive_markers std_msgs
 #  DEPENDS system_lib
-CATKIN_DEPENDS message_runtime
+CATKIN_DEPENDS message_runtime 
 )
 
 ###########
