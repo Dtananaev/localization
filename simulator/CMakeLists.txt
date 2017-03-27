@@ -16,7 +16,7 @@ find_package(catkin REQUIRED COMPONENTS
   tf
   visualization_msgs
 )
-FIND_PACKAGE(Eigen REQUIRED )
+FIND_PACKAGE(Eigen3 REQUIRED )
 
 
 ## System dependencies are found with CMake's conventions
@@ -91,7 +91,7 @@ FIND_PACKAGE(Eigen REQUIRED )
 catkin_package(
   INCLUDE_DIRS include
   LIBRARIES simulator
-  CATKIN_DEPENDS Eigen roscpp rospy std_msgs tf visualization_msgs
+  CATKIN_DEPENDS roscpp rospy std_msgs tf visualization_msgs
   DEPENDS system_lib
 )
 
@@ -105,7 +105,7 @@ catkin_package(
 include_directories(
   ${catkin_INCLUDE_DIRS}
   include
-  ${EIGEN_INCLUDE_DIR}
+  ${EIGEN3_INCLUDE_DIR}
 )
 
 ## Declare a cpp library
@@ -134,7 +134,7 @@ add_executable(caster
    src/collidechecker.cpp
 )
 
-TARGET_LINK_LIBRARIES(caster ${catkin_LIBRARIES})
+TARGET_LINK_LIBRARIES(caster ${catkin_LIBRARIES} ${Eigen_LIBRARIES})
 
 
 add_executable(caster_online
@@ -143,5 +143,5 @@ add_executable(caster_online
    src/collidechecker.cpp
 )
 
-TARGET_LINK_LIBRARIES(caster_online ${catkin_LIBRARIES})
+TARGET_LINK_LIBRARIES(caster_online ${catkin_LIBRARIES} ${Eigen_LIBRARIES})
 
