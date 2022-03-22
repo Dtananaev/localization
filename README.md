@@ -2,7 +2,7 @@ Localization
 ======================================
 Robot localization with deep neural networks on 2D occupancy grid maps.
 The goal of the research project is to explore the capabilities of the neural networks to localize the robot on a 2D plane given the odometry and 2D laser scans.
-The full report could be found here: https://drive.google.com/open?id=0B0jDQTJWpzD3ZnBHMDY1d0twU3c
+The full report could be found in [document.pdf](https://github.com/Dtananaev/localization/blob/master/document.pdf)
 
 Installation
 ======================================
